@@ -1,4 +1,4 @@
-const SkillModel = require("../../server/models/Skill");
+const SkillModel = require("../models/Skill");
 
 module.exports = async (req, res) => {
     try {

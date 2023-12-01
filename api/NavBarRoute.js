@@ -1,4 +1,4 @@
-const NavBarModel = require("../../server/models/NavBar");
+const NavBarModel = require("../models/NavBar");
 
 module.exports = async (req, res) => {
     try {

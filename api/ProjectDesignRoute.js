@@ -1,4 +1,4 @@
-const ProjectDesignModel = require("../../server/models/ProjectDesign");
+const ProjectDesignModel = require("../models/ProjectDesign");
 
 module.exports = async (req, res) => {
   try {

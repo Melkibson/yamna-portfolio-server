@@ -1,4 +1,4 @@
-const WorkModel = require("../../server/models/Work");
+const WorkModel = require("../models/Work");
 
 module.exports = async (req, res) => {
   try {

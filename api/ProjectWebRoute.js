@@ -1,4 +1,4 @@
-const ProjectWebModel = require('../../server/models/ProjectWeb');
+const ProjectWebModel = require('../models/ProjectWeb');
 
 module.exports = async (req, res) => {
     try {

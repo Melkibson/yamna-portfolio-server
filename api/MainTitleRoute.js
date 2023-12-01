@@ -1,4 +1,4 @@
-const MainTitleModel = require("../../server/models/MainTitle");
+const MainTitleModel = require("../models/MainTitle");
 
 module.exports = async (req, res) => {
     try {

@@ -1,4 +1,4 @@
-const ContactModel = require("../../server/models/Contact");
+const ContactModel = require("../models/Contact");
 
 module.exports = async (req, res) => {
     try {

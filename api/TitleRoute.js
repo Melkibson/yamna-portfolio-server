@@ -1,4 +1,4 @@
-const TitleModel = require("../../server/models/Title");
+const TitleModel = require("../models/Title");
 
 module.exports = async (req, res) => {
     try {
