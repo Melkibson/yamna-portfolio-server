@@ -7,10 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+connect(process.env.MONGO_URI);
 
 import ContactRouter from "./api/ContactRouter.js";
 import NavBarRouter from "./api/NavBarRouter.js";
@@ -20,7 +17,9 @@ import SkillRouter from "./api/SkillRouter.js";
 import ProjectWebRouter from "./api/ProjectWebRouter.js";
 import ProjectDesignRouter from "./api/ProjectDesignRouter.js";
 import WorkRouter from "./api/WorkRouter.js";
+import AuthRouter from "./api/AuthRouter.js";
 
+app.use("/authenticate", AuthRouter)
 app.use("/api/contact", ContactRouter);
 app.use("/api/navBar", NavBarRouter);
 app.use("/api/maintitle", MainTitleRouter);
@@ -29,6 +28,5 @@ app.use("/api/skill", SkillRouter);
 app.use("/api/projectweb", ProjectWebRouter);
 app.use("/api/projectdesign", ProjectDesignRouter);
 app.use("/api/work", WorkRouter);
-
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

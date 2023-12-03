@@ -1,5 +1,6 @@
 import NavBar from "../models/NavBar.js";
 import express from "express";
+import { authenticateToken } from "../utils/authenticateToken.js";
 
 const NavBarRouter = express.Router();
 
@@ -21,38 +22,42 @@ NavBarRouter.get('/:id', async (req, res) => {
     }
 });
 
-NavBarRouter.post('/', async (req, res) => {
-    const navBar = new NavBar({
-        name: req.body.name,
-        link: req.body.link,
-    });
-    try {
-        const newNavItem = await navBar.save();
-        res.status(201).json(newNavItem);
-    } catch (err) {
-        res.status(400).json({ message: "Impossible de créer un nouvel élément de navigation" });
-    }
+NavBarRouter.post("/", authenticateToken, async (req, res) => {
+  const navBar = new NavBar({
+    name: req.body.name,
+    link: req.body.link,
+  });
+  try {
+    const newNavItem = await navBar.save();
+    res.status(201).json(newNavItem);
+  } catch (err) {
+    res
+      .status(400)
+      .json({ message: "Impossible de créer un nouvel élément de navigation" });
+  }
 });
 
-NavBarRouter.put('/:id', async (req, res) => {
-    const updatedNavBar = await NavBar.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true }
-    );
+NavBarRouter.put("/:id", authenticateToken, async (req, res) => {
+  const updatedNavBar = await NavBar.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
 
-    if (!updatedNavBar) return res.status(404).json({ message: "Navigation introuvable" });
-    res.status(200).json(updatedNavBar);
+  if (!updatedNavBar)
+    return res.status(404).json({ message: "Navigation introuvable" });
+  res.status(200).json(updatedNavBar);
 });
 
-NavBarRouter.delete('/:id', async (req, res) => {
-    try {
-        const deletedNavBar = await NavBar.findByIdAndDelete(req.params.id);
-        if (!deletedNavBar) return res.status(404).json({ message: "Navigation introuvable" });
-        res.status(200).json(deletedNavBar);
-    } catch (err) {
-        res.status(500).json({ message: "Impossible de supprimer la navigation" });
-    }
+NavBarRouter.delete("/:id", authenticateToken, async (req, res) => {
+  try {
+    const deletedNavBar = await NavBar.findByIdAndDelete(req.params.id);
+    if (!deletedNavBar)
+      return res.status(404).json({ message: "Navigation introuvable" });
+    res.status(200).json(deletedNavBar);
+  } catch (err) {
+    res.status(500).json({ message: "Impossible de supprimer la navigation" });
+  }
 });
 
 export default NavBarRouter;

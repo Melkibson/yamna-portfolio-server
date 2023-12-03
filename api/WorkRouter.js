@@ -1,5 +1,6 @@
 import Work from "../models/Work.js";
 import express from "express";
+import { authenticateToken } from "../utils/authenticateToken.js";
 
 const WorkRouter = express.Router();
 
@@ -21,46 +22,46 @@ WorkRouter.get('/:id', async (req, res) => {
   }
 });
 
-WorkRouter.post('/', async (req, res) => {
+WorkRouter.post("/", authenticateToken, async (req, res) => {
   const work = new Work({
     location: {
       city: req.body.location.city,
       country: req.body.location.country,
     },
-    period : {
+    period: {
       startMonth: req.body.period.startMonth,
       endMonth: req.body.period.endMonth,
       startYear: req.body.period.startYear,
       endYear: req.body.period.endYear,
     },
-    links : {
+    links: {
       color: req.body.links.color,
       name: req.body.links.name,
       link: req.body.links.link,
     },
-      company: req.body.company,
-      colorDark: req.body.colorDark,
-      colorLight: req.body.colorLight,
-      type: req.body.type,
-      position: req.body.position,
-      tech: req.body.tech,
-      hasProject: req.body.hasProject,
+    company: req.body.company,
+    colorDark: req.body.colorDark,
+    colorLight: req.body.colorLight,
+    type: req.body.type,
+    position: req.body.position,
+    tech: req.body.tech,
+    hasProject: req.body.hasProject,
   });
   try {
     const newWork = await work.save();
     res.status(201).json(newWork);
   } catch (err) {
-    res.status(400).json({ message: "Impossible de créer une nouvelle expérience" });
+    res
+      .status(400)
+      .json({ message: "Impossible de créer une nouvelle expérience" });
   }
 });
 
-WorkRouter.put("/:id", async (req, res) => {
+WorkRouter.put("/:id", authenticateToken, async (req, res) => {
   try {
-    const upDatedWork = await Work.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const upDatedWork = await Work.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
 
     if (!upDatedWork)
       return res
@@ -68,11 +69,13 @@ WorkRouter.put("/:id", async (req, res) => {
         .json({ message: "Cette expérience n'a pas été trouvée" });
     res.status(200).json(upDatedWork);
   } catch (err) {
-    res.status(500).json({ message: "Impossible de mettre à jour l'expérience" });
+    res
+      .status(500)
+      .json({ message: "Impossible de mettre à jour l'expérience" });
   }
 });
 
-WorkRouter.delete("/:id", async (req, res) => {
+WorkRouter.delete("/:id", authenticateToken, async (req, res) => {
   try {
     const deletedWork = await Work.findByIdAndDelete(req.params.id);
     if (!deletedWork)
