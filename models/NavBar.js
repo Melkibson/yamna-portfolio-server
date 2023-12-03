@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const navBarSchema = new Schema({
@@ -14,4 +14,4 @@ const navBarSchema = new Schema({
 
 const NavBarModel = mongoose.model("NavBar", navBarSchema);
 
-module.exports = NavBarModel;
+export default NavBarModel;
