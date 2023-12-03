@@ -8,7 +8,7 @@ WorkRouter.get('/',async (req, res) => {
     const work = await Work.find({});
     res.json(work);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Il n'y a aucune expérience" });
   }
 });
 
@@ -17,7 +17,7 @@ WorkRouter.get('/:id', async (req, res) => {
     const work = await Work.findById(req.params.id);
     res.json(work);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Expérience introuvable" });
   }
 });
 
@@ -50,7 +50,7 @@ WorkRouter.post('/', async (req, res) => {
     const newWork = await work.save();
     res.status(201).json(newWork);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(400).json({ message: "Impossible de créer une nouvelle expérience" });
   }
 });
 
@@ -68,7 +68,7 @@ WorkRouter.put("/:id", async (req, res) => {
         .json({ message: "Cette expérience n'a pas été trouvée" });
     res.status(200).json(upDatedWork);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Impossible de mettre à jour l'expérience" });
   }
 });
 
@@ -81,7 +81,7 @@ WorkRouter.delete("/:id", async (req, res) => {
         .json({ message: "Cette expérience n'a pas été trouvée" });
     res.status(200).json(deletedWork);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Impossible de supprimer l'expérience" });
   }
 });
 

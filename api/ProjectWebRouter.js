@@ -7,7 +7,7 @@ ProjectWebRouter.get('/', async (req, res) => {
         const projectsWeb = await ProjectWeb.find({});
         res.json(projectsWeb);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Il n'y a aucun projet web" });
     }
 });
 

@@ -8,7 +8,7 @@ ProjectDesignRouter.get('/', async (req, res) => {
     const projectsDesign = await ProjectDesign.find({});
     res.json(projectsDesign);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Il n'y a aucun projet design" });
   }
 });
 

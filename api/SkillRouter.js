@@ -8,7 +8,7 @@ SkillRouter.get('/', async (req, res) => {
         const skill = await Skill.find({});
         res.json(skill);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Il n'y a aucune compétence" });
     }
 });
 

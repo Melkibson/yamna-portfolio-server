@@ -8,7 +8,7 @@ NavBarRouter.get('/',async (req, res) => {
         const navBar = await NavBar.find({});
         res.json(navBar);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Il n'y a aucune navigation" });
     }
 });
 
@@ -17,7 +17,7 @@ NavBarRouter.get('/:id', async (req, res) => {
         const navBar = await NavBar.findById(req.params.id);
         res.json(navBar);
     } catch (err) {
-        res.status(500).json({ message: "Navbar introuvable" });
+        res.status(500).json({ message: "Navigation introuvable" });
     }
 });
 

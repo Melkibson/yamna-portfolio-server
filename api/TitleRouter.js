@@ -29,7 +29,7 @@ TitleRouter.post('/', async (req, res) => {
         const newTitle = await title.save();
         res.status(201).json(newTitle);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: "Impossible de créer le titre" });
     }
 });
 

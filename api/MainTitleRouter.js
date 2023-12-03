@@ -8,7 +8,7 @@ MainTitleRouter.get('/', async (req, res) => {
         const mainTitle = await MainTitle.find({});
         res.json(mainTitle);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Il n'y aucun titre principal" });
     }
 });
 
@@ -17,7 +17,7 @@ MainTitleRouter.get("/:id", async (req, res) => {
     const mainTitle = await MainTitle.findById(req.params.id);
     res.json(mainTitle);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: "Titre principal introuvable" });
   }
 });
 
@@ -33,7 +33,7 @@ MainTitleRouter.post("/", async (req, res) => {
         const newMainTitle = await mainTitle.save();
         res.status(201).json(newMainTitle);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: "Impossible de créer un nouveau titre principal" });
     }
     });
 
@@ -51,7 +51,7 @@ MainTitleRouter.post("/", async (req, res) => {
             .json({ message: "Le titre principal n'a pas été trouvé" });
         res.status(200).json(upDatedMainTitle);
       } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Impossible de mettre à jour le titre principal" });
       }
     });
 
@@ -64,7 +64,7 @@ MainTitleRouter.post("/", async (req, res) => {
             .json({ message: "Le titre principal n'a pas été trouvé" });
         res.status(200).json(deletedMainTitle);
       } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Impossible de supprimer le titre principal" });
       }
     });
 
