@@ -1,0 +1,101 @@
+@font-face {
+  font-family: Abril;
+  src: url("fonts/abril/AbrilFatface-Regular.woff2");
+}
+@font-face {
+  font-family: Akkurat;
+  src: url("fonts/akkurat/Akkurat.ttf");
+}
+@font-face {
+  font-family: Haas;
+  src: url("fonts/haas/NHaasGroteskTXPro-55Rg.woff2");
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(18, 18, 18);
+  color: white;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.main .heading {
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: "Abril", serif;
+}
+.main .subHeading {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Akkurat", sans-serif;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px;
+}
+.main .subHeading:hover {
+  background: white;
+  color: black;
+  transition: all 0.75s ease-in-out;
+}
+.main .apiRoutes .routes .routeHeading {
+  font-family: "Haas", serif;
+  font-size: 1.75rem;
+}
+.main .apiRoutes .routes .responseHeading {
+  font-family: "Haas", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.main .apiRoutes .routes .route {
+  font-family: "Akkurat", sans-serif;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer {
+  width: 600px;
+  height: auto;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .codeSnippet {
+  width: 100%;
+  height: auto;
+  background: rgb(30, 30, 30);
+  padding: 20px;
+  border-radius: 5px;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .codeSnippet code {
+  font-size: 1rem;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .codeSnippetHeader {
+  background: rgb(50, 50, 50);
+  width: 100%;
+  padding: 5px 20px;
+  border-radius: 5px 5px 0 0;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .routeDesc {
+  font-size: 1.5rem;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .routeBody {
+  font-size: 1.25rem;
+}
+.main .apiRoutes .routes .route .codeSnippetContainer .routeRequest {
+  font-size: 1.1rem;
+}
+.main .apiRoutes .routes .route .routeResponse .response {
+  font-size: 1.1rem;
+  padding: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

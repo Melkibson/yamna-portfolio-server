@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "compile:sass": "sass styles/main.scss public/style.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
     "mongoose": "^8.0.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
   }
 }

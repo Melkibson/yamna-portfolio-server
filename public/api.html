@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio API</title>
+</head>
+<body class="main">
+    <header class="heading">
+        <h1>API Enpoints<h1>
+    </header>
+    <section class="apiRoutes">
+        <div class="routes">
+            <h2 class="routeHeading">Authentication</h2>
+            <h2 class="routeHeading">POST /api/auth</h2>
+            <div class="route">
+                <p class="routeDesc">Handles user authentication. Users must authenticate to access protected routes</p>
+                <p class="routeBody">Request Body</p>
+                <div class="routeRequest">
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;email: string</p>
+                                <p>&nbsp;password: string</p>} 
+                            </code>
+                        </div>
+                    </div>
+                    <div class="routeResponse">
+                        <h4 class="responseHeading">Responses</h4>
+                        <p>Returns a JSON Web Token that must be included in the `Authorization` header of subsequent requests to protected routes</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/navbar</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieves all navigation items</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved all navigation items</li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/navbar</h2>
+                    <p class="routeDesc">Creates a new navigation item</p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {
+                                <p>&nbsp;"name": "navigation item item name",</p>
+                                <p>&nbsp;"ref": "navigation item href link",</p>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Navigation item successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/maintitle</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieves the main title for the portfolio</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved the main title </li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/maintitle</h2>
+                    <p class="routeDesc">Creates a new main title if it doesn't exist </p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"firstName": "FirstName",</p>
+                                <p>&nbsp;"lastName": "Lastname",</p>
+                                <p>&nbsp;"position": "Developer",</p>
+                                <p>&nbsp;"type": "Full Stack"</p>}
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Main title successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/title</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieves all the sections titles</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved all the titles </li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/title</h2>
+                    <p class="routeDesc">Creates a new section title</p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"name": "title name",</p>}
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Section title successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/projectweb</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieve all web projects</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved projects</li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/projectweb</h2>
+                    <p class="routeDesc">Creates a new project </p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"title": "Project Title",</p>
+                                <p>&nbsp;"description": "Project description",</p>
+                                <p>&nbsp;"demo": "http://demo-url.com",</p>
+                                <p>&nbsp;"src": "assets/img/image.png"</p>}
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Project successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/projectdesign</h2>
+            <div class="route">
+                <p class="routeDesc">Fetch all the design projects</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved projects</li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/projectdesign</h2>
+                    <p class="routeDesc">Creates a new design project </p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"title": "Project Title",</p>
+                                <p>&nbsp;"description": "Project description",</p>
+                                <p>&nbsp;"demo": empty string (design projects don't have demos)</p>
+                                <p>&nbsp;"src": "assets/img/image.png"</p>}
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Project successfully created </li>
+                    </ul>
+                </div>
+            </div>
+             <h2 class="routeHeading">GET /api/work</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieve all work experiences</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved experiences</li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/work</h2>
+                    <p class="routeDesc">Creates a new work experience </p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"company": "Company name",</p>
+                                <p>&nbsp;"location": {
+                                    <p>&nbsp;&nbsp;"city": "City Name",</p>
+                                    <p>&nbsp;&nbsp;"country": "Country Name"</p>
+                                    &nbsp;},</p>
+                                <p>&nbsp;"colorDark": "color of the work card,"</p>
+                                <p>&nbsp;"colorLight": ""color of the work card hover",</p>
+                                <p>&nbsp;"type": "Type of employment contract",</p>
+                                <p>&nbsp;"peridod": {
+                                    <p>&nbsp;&nbsp;"startMonth": "Start month of the contract",</p>
+                                    <p>&nbsp;&nbsp;"startMonth": "Start month of the contract",</p>
+                                    <p>&nbsp;&nbsp;"endMonth": "End month of the contract",</p>    
+                                    <p>&nbsp;&nbsp;"startYear": "Start year of the contract",</p>
+                                    <p>&nbsp;&nbsp;"endYear": "End year of the contract",</p>
+                                    &nbsp;}
+                                    <p>&nbsp;"tech": "technologies used"</p>
+                                    <p>&nbsp;"hasProject": "boolean"</p>
+                                    <p>&nbsp;"links": {
+                                        <p>&nbsp;&nbsp;"color": "color of the project links"</p>
+                                        <p>&nbsp;&nbsp;"name": "name of the project's link"</p>
+                                        <p>&nbsp;&nbsp;"link": "url of the project's link"</p>
+                                        &nbsp;}</p>
+
+                                </p>}
+                                <p></p>
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Work experience successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/skill</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieves all the skills.</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved all the skills </li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/skill</h2>
+                    <p class="routeDesc">Creates a new skill </p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {<p>&nbsp;"name": "Skill Name",</p>
+                                <p>&nbsp;"src": "assets/img/skill.png",</p>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Skill successfully created </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="routeHeading">GET /api/contact</h2>
+            <div class="route">
+                <p class="routeDesc">Retrieves all contacts items</p>
+                <div class="routeResponse">
+                    <h4 class="responseHeading">Responses</h4>
+                    <ul class="response">
+                        <li>200 OK: Successfully retrieved all contacts items</li>
+                    </ul>
+                    <h2 class="routeHeading">POST /api/contact</h2>
+                    <p class="routeDesc">Creates a new contact item</p>
+                    <div class="codeSnippetContainer">
+                        <div class="codeSnippetHeader">json</div>
+                        <div class="codeSnippet">
+                            <code> 
+                                {
+                                <p>&nbsp;"name": "contact item name",</p>
+                                <p>&nbsp;"ref": "contact item href link",</p>
+                                <p>&nbsp;"color": "contact item color",</p>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                    <ul class="response">
+                        <li>201: Contact item successfully created </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

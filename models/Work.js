@@ -76,10 +76,6 @@ const workSchema = new Schema({
       },
     ],
   },
-  year: {
-    type: String,
-    required: false,
-  },
 });
 
 const WorkModel = mongoose.model("Work", workSchema);

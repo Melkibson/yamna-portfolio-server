@@ -1,0 +1,110 @@
+@font-face {
+  font-family: Abril;
+  src: url("fonts/abril/AbrilFatface-Regular.woff2");
+}
+
+@font-face {
+  font-family: Akkurat;
+  src: url("fonts/akkurat/Akkurat.ttf");
+}
+@font-face {
+  font-family: Haas;
+  src: url("fonts/haas/NHaasGroteskTXPro-55Rg.woff2");
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+body {
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(18, 18, 18);
+  color: white;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  
+  .heading {
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: "Abril", serif;
+  }
+
+  .subHeading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "Akkurat", sans-serif;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    &:hover {
+      background: white;
+      color: black;
+      transition: all 0.75s ease-in-out;
+    }
+  }
+  .apiRoutes {
+    .routes {  
+      .routeHeading {
+        font-family: "Haas", serif;
+        font-size: 1.75rem;
+      }
+      .responseHeading {
+        font-family: "Haas", serif;
+        font-size: 1.10rem;
+        font-weight: 700;
+      }
+      .route {
+        font-family: "Akkurat", sans-serif;
+        .codeSnippetContainer {
+            width: 600px;
+            height: auto;
+                .codeSnippet {
+                    width: 100%;
+                    height: auto;
+                    background: rgb(30, 30, 30);
+                    padding: 20px;
+                    border-radius: 5px;
+                    code{
+                        font-size: 1rem;
+                    }
+                }
+                .codeSnippetHeader{
+                    background: rgb(50, 50, 50);
+                    width: 100%;
+                    padding: 5px 20px;
+                    border-radius: 5px 5px 0 0;
+
+                }
+        .routeDesc {
+          font-size: 1.5rem;
+        }
+        .routeBody {
+          font-size: 1.25rem;
+        }
+        .routeRequest {
+            font-size: 1.10rem;
+        }
+            
+        }
+        .routeResponse {
+            .response{
+                font-size: 1.10rem;
+                padding: 15px;           
+            }
+        }
+      }
+    }
+  }
+}
